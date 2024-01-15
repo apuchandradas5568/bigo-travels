@@ -168,17 +168,15 @@ header .banner .banner_content > form {
   background: rgba(255, 255, 255, 0.3);
   margin-top: 2rem;
 }
-header .banner .banner_content form input,
-header .banner .banner_content form select,
-header .banner .banner_content form .main_btn {
-  border-radius: 0.5rem;
-  background: var(--white-color);
-  color: var(--light-dark-color);
-  width: 174px;
-  /* height: 52px; */
-  padding: 16px;
-  border: none;
-  outline: none;
+header .banner .banner_content form input, header .banner .banner_content form select, header .banner .banner_content form .main_btn {
+    border-radius: 0.5rem;
+    background: var(--white-color);
+    color: var(--light-dark-color);
+    width: 174px;
+    height: 52px;
+    padding: 0 1rem;
+    border: none;
+    outline: none;
 }
 
 header .banner .banner_content form .main_btn i,
@@ -395,6 +393,7 @@ section.popular_section .img img {
   background: var(--orange-color);
   text-align: center;
   display: block;
+  height: 52px;
 }
 .newsletter_sec .image {
   position: relative;
@@ -478,29 +477,25 @@ footer .content hr {
     align-items: center;
   }
   .image_wrapper .img {
-    width: 90vw;
+    width: 80vw;
   }
 
-  .get_lost_section .video video {
-    width: 100%;
-  }
-  .why_choose_sec .card_container .card {
-    width: 100%;
-  }
-  .dec_text {
-    width: 100%;
-  }
-  header .banner .banner_content h1 {
-    font-size: 2rem;
-    font-weight: 800;
-  }
+  .get_lost_section .video video ,
+  .why_choose_sec .card_container .card,
+  .why_choose_sec .dec_text,
   header .banner .banner_content form input,
   header .banner .banner_content form select,
-  header .banner .banner_content form .main_btn {
-    width: 100%;
-  }
+  header .banner .banner_content form .main_btn,
+  header .banner .banner_content .dec_text,
   footer .content .nav_logo,
   footer .content p {
     width: 100%;
   }
+
+  header .banner .banner_content h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+ 
 }
