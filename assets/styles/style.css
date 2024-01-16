@@ -570,6 +570,9 @@ footer .content hr {
   .newsletter_sec .image .discount_card h3 {
     font-size: 1rem;
   }
+  .newsletter_sec .content form input.main_btn {
+    padding: 1rem 0;
+  }
 
   /* nav_bar CSS */
   nav .menu-btn i {
