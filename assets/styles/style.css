@@ -168,11 +168,13 @@ header .banner .banner_content > form {
   background: rgba(255, 255, 255, 0.3);
   margin-top: 2rem;
 }
-header .banner .banner_content form input, header .banner .banner_content form select, header .banner .banner_content form .main_btn {
+header .banner .banner_content form input,
+header .banner .banner_content form .main_btn,
+header .banner .banner_content form select {
     border-radius: 0.5rem;
     background: var(--white-color);
     color: var(--light-dark-color);
-    width: 174px;
+    width: 180px;
     height: 52px;
     padding: 0 1rem;
     border: none;
@@ -233,6 +235,7 @@ section.popular_section .img img {
 
 .choose_destination_sec .image_wrapper .img {
   position: relative;
+  
 }
 
 .choose_destination_sec .image_wrapper .img h3 {
@@ -267,19 +270,23 @@ section.popular_section .img img {
 
 .image_wrapper {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(16, 1fr);
   gap: 1rem;
   margin-top: 2rem;
+
 }
 
 .col_span_4 {
-  grid-column: span 4;
+  grid-column: span 10;
 }
 .col_span_2 {
-  grid-column: span 2;
+  grid-column: span 4;
 }
 .col_span_3 {
-  grid-column: span 4;
+  grid-column: span 8;
+}
+.col_span_6 {
+  grid-column: span 6;
 }
 
 /* why choose us section */
@@ -473,12 +480,12 @@ footer .content hr {
     margin-bottom: 2rem;
   }
   .image_wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+    /* grid-template-columns: repeat(1, 1fr) !important; */
+    /* align-items: center; */
   }
-  .image_wrapper .img {
-    width: 80vw;
-  }
+
+  
+
 
   .get_lost_section .video video ,
   .why_choose_sec .card_container .card,
@@ -496,6 +503,15 @@ footer .content hr {
     font-size: 2rem;
     font-weight: 800;
   }
+
+  
+.col_span_4,
+.col_span_2,
+.col_span_3,
+.col_span_6 {
+  grid-column: span 15;
+}
+
 
  
 }
