@@ -15,12 +15,13 @@
   color: var(--dark-color);
   transition: all 0.1s linear;
   font-weight: 400;
+  scroll-behavior: smooth;
+
 }
 
 body {
   overflow-x: hidden;
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 ul,
@@ -57,7 +58,7 @@ a {
   font-weight: 800;
   cursor: pointer;
   line-height: 2.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 1rem;
 }
@@ -101,6 +102,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav_logo {
@@ -118,11 +120,25 @@ header nav .nav_logo span {
   font-weight: 800;
 }
 header nav .nav_links {
-  display: flex;
-  align-items: center;
-  justify-content: end;
   gap: 1rem;
-  font-weight: 600;
+  font-weight: 400;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--orange-color);
+}
+
+nav .menu-btn i {
+  color: var(--dark-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
 }
 
 /* banner section css */
@@ -171,14 +187,14 @@ header .banner .banner_content > form {
 header .banner .banner_content form input,
 header .banner .banner_content form .main_btn,
 header .banner .banner_content form select {
-    border-radius: 0.5rem;
-    background: var(--white-color);
-    color: var(--light-dark-color);
-    width: 180px;
-    height: 52px;
-    padding: 0 1rem;
-    border: none;
-    outline: none;
+  border-radius: 0.5rem;
+  background: var(--white-color);
+  color: var(--light-dark-color);
+  width: 180px;
+  height: 52px;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
 }
 
 header .banner .banner_content form .main_btn i,
@@ -235,7 +251,6 @@ section.popular_section .img img {
 
 .choose_destination_sec .image_wrapper .img {
   position: relative;
-  
 }
 
 .choose_destination_sec .image_wrapper .img h3 {
@@ -273,7 +288,6 @@ section.popular_section .img img {
   grid-template-columns: repeat(16, 1fr);
   gap: 1rem;
   margin-top: 2rem;
-
 }
 
 .col_span_4 {
@@ -328,6 +342,62 @@ section.popular_section .img img {
   margin-bottom: 1rem;
 }
 
+/* blog section */
+
+.blog_section {
+  margin: 4rem auto;
+}
+
+.blog_section .sec_title,
+.blog_section .dec_text {
+  text-align: center;
+}
+
+.blog_section .card_container .blog-card .sub_sec_title,
+.blog_section .card_container .blog-card .dec_text {
+  text-align: left;
+}
+
+.blog_section .card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.blog_section .card_container .blog-card {
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  transform: scale(.8);
+}
+
+.blog_section .card_container .blog-card.active_card {
+transform: scale(1);
+}
+
+.blog_section .card_container .blog-card a:hover {
+  background: var(--dark-color);
+}
+
+
+
+.blog-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.blog-card-content {
+  padding: 1.25rem;
+}
 
 /* get lost section */
 
@@ -336,7 +406,7 @@ section.popular_section .img img {
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  margin: 3rem 0;
+  margin: 6rem 0;
   flex-wrap: wrap;
 }
 .get_lost_section .content {
@@ -370,7 +440,7 @@ section.popular_section .img img {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 6rem 0;
   flex-wrap: wrap;
 }
 
@@ -387,7 +457,6 @@ section.popular_section .img img {
   flex-direction: column;
 }
 .newsletter_sec .content form input {
-  /* width: 80%; */
   padding: 1rem;
   outline: none;
   margin: 0.5rem 0;
@@ -465,29 +534,16 @@ footer .content hr {
 
 /* Responsive for small Devices */
 @media screen and (max-width: 768px) {
-  nav,
   .popular_section,
   .newsletter_sec {
     flex-direction: column;
   }
 
-  nav .nav_logo {
-    margin-bottom: 2rem;
-  }
-  header nav .nav_links {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  .image_wrapper {
-    /* grid-template-columns: repeat(1, 1fr) !important; */
-    /* align-items: center; */
+  .nav_logo {
+    font-size: 1.5rem;
   }
 
-  
-
-
-  .get_lost_section .video video ,
+  .get_lost_section .video video,
   .why_choose_sec .card_container .card,
   .why_choose_sec .dec_text,
   header .banner .banner_content form input,
@@ -504,14 +560,57 @@ footer .content hr {
     font-weight: 800;
   }
 
-  
-.col_span_4,
-.col_span_2,
-.col_span_3,
-.col_span_6 {
-  grid-column: span 15;
-}
+  .col_span_4,
+  .col_span_2,
+  .col_span_3,
+  .col_span_6 {
+    grid-column: span 15;
+  }
 
+  .newsletter_sec .image .discount_card h3 {
+    font-size: 1rem;
+  }
 
- 
+  /* nav_bar CSS */
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: calc(max-content + 200px);
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    padding: 2rem 0;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 1.25rem;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--white-color);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: var(--orange-color);
+  }
 }
